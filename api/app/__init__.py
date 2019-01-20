@@ -20,7 +20,7 @@ redis = FlaskRedis(app)
 LOGGER = Logger().get_logger()
 
 
-import app.routes
+import routes
 
 migrate = Migrate(app, db)
 
