@@ -1,5 +1,5 @@
 from flask_failsafe import failsafe
-
+from app import app
 
 @failsafe
 def create_app():
