@@ -26,17 +26,18 @@ USE_STATIC_URL=${STATIC_URL:-'/static'}
 # Get the absolute path of the static files from the environment variable
 USE_STATIC_PATH=${STATIC_PATH:-'/code/static'}
 # Get the listen port for Nginx, default to 80
-USE_LISTEN_PORT=${LISTEN_PORT:-5000}
+USE_LISTEN_PORT=${LISTEN_PORT:-8000}
 
 # Generate Nginx config first part using the environment variables
 echo "server {
     listen ${USE_LISTEN_PORT};
+    server_name localhost:
     location / {
         try_files \$uri @app;
     }
     location @app {
         include uwsgi_params;
-        uwsgi_pass unix:///tmp/uwsgi.sock;
+        uwsgi_pass unix:/tmp/uwsgi.sock;
     }
     location $USE_STATIC_URL {
         alias $USE_STATIC_PATH;
