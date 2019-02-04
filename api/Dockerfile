@@ -17,6 +17,7 @@ ENV NGINX_MAX_UPLOAD 0
 # To modify this, change LISTEN_PORT environment variable.
 # (in a Dockerfile or with an option for `docker run`)
 ENV LISTEN_PORT 5000
+EXPOSE 5000
 
 # Add demo app
 #COPY ./app /app
