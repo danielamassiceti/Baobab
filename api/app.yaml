@@ -2,5 +2,4 @@ runtime: custom
 env: flex
 network:
   forwarded_ports:
-    - 81:81
-    - 81/tcp
+    - 1081:1081

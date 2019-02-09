@@ -36,6 +36,6 @@ COPY gunicorn.config.py /code/gunicorn.config.py
 WORKDIR /code
 RUN pip install -r requirements.txt
 
-EXPOSE 81 443
+EXPOSE 1081 443
 
 CMD ["/usr/bin/supervisord"]
