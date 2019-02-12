@@ -1,8 +1,5 @@
 """Gunicorn configuration."""
 
-bind = '0.0.0.0:5000'
-
+forwarded_allow_ips = '*'
+secure_scheme_headers = {'X-Forwarded-Proto': 'https'}
 workers = 4
-worker_class = 'gevent'
-
-accesslog = '-'
